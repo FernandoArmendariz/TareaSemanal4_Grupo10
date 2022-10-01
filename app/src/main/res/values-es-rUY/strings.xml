@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tarea Semanal 4 - Grupo10</string>
+    <string name="nombre">Ingrese nombre</string>
+    <string name="apellido">Ingrese apellido</string>
+    <string name="sel_rol">Seleccione rol</string>
+    <string name="agregar_usuario">Agregar usuario</string>
+    <array name="lst_rol" >
+        <item>Administrador</item>
+        <item>Investigador</item>
+        <item>Aficionado</item>
+    </array>
+</resources>

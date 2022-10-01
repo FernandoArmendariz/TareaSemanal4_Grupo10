@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Weekly Task #4 - Group 10</string>
+    <string name="nombre">First name</string>
+    <string name="apellido">Last name</string>
+    <string name="sel_rol">Select role</string>
+    <string name="agregar_usuario">Add user</string>
+    <array name="lst_rol">
+        <item>Administrator</item>
+        <item>Researcher</item>
+        <item>Technician</item>
+    </array>
+</resources>

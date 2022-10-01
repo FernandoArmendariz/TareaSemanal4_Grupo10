@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="@dimen/margen_predeterminado">
+
+    <!--  inicio de editText Nombre-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:endIconMode="clear_text"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre"
+            android:maxLines="1"
+            android:inputType="textPersonName"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--  fin de editText-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lytNombre"
+        android:layout_marginTop="@dimen/margen_predeterminado"
+        app:endIconMode="clear_text"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/apellido"
+            android:maxLines="1"
+            android:inputType="textPersonName"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    input para menu desplegable, con las mismas caracteristicas que los anteriores-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lytRol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lytApellido"
+        android:layout_marginTop="@dimen/margen_predeterminado"
+        app:endIconMode="clear_text"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
+        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+
+        <!--    declaracion de ACTV para referenciar lyout de textEdit-->
+        <AutoCompleteTextView
+            android:id="@+id/cmbRol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:hint="@string/sel_rol"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lytRol"
+        android:layout_marginTop="@dimen/margen_predeterminado"
+
+        android:text="Enviar datos"
+        app:icon="@drawable/ic_send"
+        app:iconGravity="textEnd"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnEnviar"
+        android:layout_marginTop="@dimen/margen_predeterminado"
+
+        android:text="Historico de datos esos"
+        app:icon="@drawable/ic_send"
+        app:iconGravity="textEnd"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
