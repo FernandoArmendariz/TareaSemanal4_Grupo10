@@ -25,7 +25,7 @@ public class UsuarioListAdapter extends ListAdapter<Usuario, UsuarioViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usuarioActual = getItem(position);
-        holder.bind(usuarioActual.getNombre(), usuarioActual.getRol());
+        holder.bind(usuarioActual.getNombre(), usuarioActual.getApellido(), usuarioActual.getRol(), usuarioActual.getFecha());
 
     }
 

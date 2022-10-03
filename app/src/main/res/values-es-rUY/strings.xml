@@ -4,6 +4,8 @@
     <string name="apellido">Ingrese apellido</string>
     <string name="sel_rol">Seleccione rol</string>
     <string name="agregar_usuario">Agregar usuario</string>
+    <string name="mostrar_historico">Mostrar histórico</string>
+    <string name="enviar_usuario">Agregar usuario</string>
     <array name="lst_rol" >
         <item>Administrador</item>
         <item>Investigador</item>

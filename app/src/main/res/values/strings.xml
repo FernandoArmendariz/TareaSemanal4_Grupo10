@@ -4,6 +4,8 @@
     <string name="apellido">Last name</string>
     <string name="sel_rol">Select role</string>
     <string name="agregar_usuario">Add user</string>
+    <string name="mostrar_historico">Show history</string>
+    <string name="enviar_usuario">Add user</string>
     <array name="lst_rol">
         <item>Administrator</item>
         <item>Researcher</item>

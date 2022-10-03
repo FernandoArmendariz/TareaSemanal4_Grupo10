@@ -28,14 +28,13 @@ public class UsuarioRepositorio {
 
     public void ingresarUsuario(Usuario usuario) {
         UsuarioRoomBD.databaseWriteExecutor.execute(() -> {
-            daou.insert(usuario.getNombre(), usuario.getApellido(), usuario.getRol());
+            daou.insert(usuario);
+            //daou.insert(usuario.getNombre(), usuario.getApellido(), usuario.getRol());
         });
     }
 
     public void borrarTodosUsuarios() {
-        UsuarioRoomBD.databaseWriteExecutor.execute(() -> {
-            daou.deleteAll();
-        });
+        UsuarioRoomBD.databaseWriteExecutor.execute(() -> daou.deleteAll());
     }
 
     public UauarioDAO obtenerUsuarioDAO(){

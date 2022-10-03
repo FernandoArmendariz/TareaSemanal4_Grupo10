@@ -2,6 +2,7 @@ package com.utec.tareasemanal4grupo10.persistence.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
@@ -12,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity(tableName = "usuarios")
+@Entity(tableName = "usuarios", indices = {@Index(value = {"first_name", "last_name"}, unique = true)})
 public class Usuario implements Serializable {
 
         @PrimaryKey(autoGenerate = true)
@@ -26,11 +27,13 @@ public class Usuario implements Serializable {
         @ColumnInfo(name = "last_name")
         private String apellido;
 
+        @NotNull
         @ColumnInfo(name = "role")
         private String rol;
-        //@Column(name="FEC_HORA", nullable=false, insertable = false, updatable = false, columnDefinition = "DATE DEFAULT CURRENT_TIMESTAMP")
+
+        @NotNull
         @ColumnInfo(name = "created_at", defaultValue = "CURRENT_TIMESTAMP")
-        @TypeConverters(ConvertirFechaLong.class)
+        @TypeConverters(ConvertirFechaLong.class) //cambia de date a string
         private Date fecha;
 
         public Usuario(@NotNull String nombre, @NotNull String apellido, @NotNull String rol) {
@@ -61,12 +64,12 @@ public class Usuario implements Serializable {
         public String getRol() {
                 return rol;
         }
-
+        @NotNull
         public Date getFecha() {
                 return fecha;
         }
 
-        public void setFecha(Date fecha) {
+        public void setFecha(@NotNull Date fecha) {
                 this.fecha = fecha;
         }
 }

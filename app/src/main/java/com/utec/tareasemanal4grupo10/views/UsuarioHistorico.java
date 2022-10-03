@@ -29,13 +29,11 @@ public class UsuarioHistorico extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        uvm.obtenerUsuarios().observe(this,usuarios -> adapter.submitList(usuarios));
+        uvm.obtenerUsuarios().observe(this, adapter::submitList);
 
         fab = findViewById(R.id.btnAgregar);
-        fab.setOnClickListener( view -> {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        });
+        //finish elimina la vista
+        fab.setOnClickListener(view -> finish());
 
     }
 }

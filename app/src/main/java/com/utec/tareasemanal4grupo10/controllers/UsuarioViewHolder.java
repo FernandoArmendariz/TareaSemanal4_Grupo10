@@ -9,22 +9,33 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.utec.tareasemanal4grupo10.R;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class UsuarioViewHolder extends RecyclerView.ViewHolder {
     private final TextView nombreItemView;
     private final TextView rolItemView;
+    private final TextView fechaItemView;
     private final TextView idItenmView;
 
     private UsuarioViewHolder(View itemView){
         super(itemView);
         nombreItemView = itemView.findViewById(R.id.textViewNombre);
         rolItemView = itemView.findViewById(R.id.textViewDescripcion);
+        fechaItemView = itemView.findViewById(R.id.textViewFecha);
         idItenmView = itemView.findViewById(R.id.textViewID);
     }
 
-    public void bind(String nombre, String descripcion){
+    public void bind(String nombre, String apellido, String descripcion, Date fecha){
         nombreItemView.setText(nombre);
         rolItemView.setText(descripcion);
-        idItenmView.setText((!nombre.isEmpty())?nombre.valueOf(nombre.charAt(0)).toUpperCase():"");
+        idItenmView.setText((!nombre.isEmpty()) ? String.valueOf(nombre.charAt(0)).toUpperCase():"");
+        fechaItemView.setText(
+                //se da formato a la fecha para mostrar
+                new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(fecha)
+        );
     }
 
     static UsuarioViewHolder create(ViewGroup parent){

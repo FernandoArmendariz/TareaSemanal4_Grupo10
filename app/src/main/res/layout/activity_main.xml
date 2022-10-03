@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:layout_margin="@dimen/margen_predeterminado">
+    android:layout_margin="@dimen/margen_predeterminado"
+    android:windowSoftInputMode="stateAlwaysHidden">
 
     <!--  inicio de editText Nombre-->
     <com.google.android.material.textfield.TextInputLayout
@@ -16,10 +17,10 @@
         app:endIconMode="clear_text"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+        app:boxCornerRadiusBottomEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusBottomStart="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopStart="@dimen/esquinas_redondeadas">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
@@ -40,10 +41,10 @@
         app:endIconMode="clear_text"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+        app:boxCornerRadiusBottomEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusBottomStart="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopStart="@dimen/esquinas_redondeadas">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtApellido"
             android:layout_width="match_parent"
@@ -51,6 +52,7 @@
             android:hint="@string/apellido"
             android:maxLines="1"
             android:inputType="textPersonName"
+            android:digits="qwertzuiopasdfghjklyxcvbnmQWERTZUIOPASDFGHJKLYXCVBNM "
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -61,13 +63,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/lytApellido"
         android:layout_marginTop="@dimen/margen_predeterminado"
-        app:endIconMode="clear_text"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:boxCornerRadiusBottomEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusBottomStart="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopEnd="@dimen/margen_predeterminado"
-        app:boxCornerRadiusTopStart="@dimen/margen_predeterminado">
+        app:boxCornerRadiusBottomEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusBottomStart="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopEnd="@dimen/esquinas_redondeadas"
+        app:boxCornerRadiusTopStart="@dimen/esquinas_redondeadas">
 
         <!--    declaracion de ACTV para referenciar lyout de textEdit-->
         <AutoCompleteTextView
@@ -75,7 +76,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:focusable="false"
             android:hint="@string/sel_rol"
+            android:inputType="none"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,10 +88,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/lytRol"
         android:layout_marginTop="@dimen/margen_predeterminado"
-
-        android:text="Enviar datos"
-        app:icon="@drawable/ic_send"
-        app:iconGravity="textEnd"
+        app:cornerRadius="@dimen/esquinas_redondeadas"
+        android:text="@string/enviar_usuario"
+        app:icon="@drawable/ic_baseline_person_add"
+        app:iconGravity="end"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -97,9 +100,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/btnEnviar"
         android:layout_marginTop="@dimen/margen_predeterminado"
-
-        android:text="Historico de datos esos"
-        app:icon="@drawable/ic_send"
-        app:iconGravity="textEnd"
+        app:cornerRadius="@dimen/esquinas_redondeadas"
+        android:text="@string/mostrar_historico"
+        app:icon="@drawable/ic_baseline_history"
+        app:iconGravity="end"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
