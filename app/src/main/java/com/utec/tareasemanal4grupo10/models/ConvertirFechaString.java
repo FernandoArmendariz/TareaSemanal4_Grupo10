@@ -5,16 +5,18 @@ import androidx.room.TypeConverter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
-public class ConvertirFechaLong {
+public class ConvertirFechaString {
 
-    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss X", Locale.getDefault());
 
     @TypeConverter
     public static Date toDate(String timestamp){
         Date date;
         try {
             date = sdf.parse(timestamp);
+
         }catch (ParseException p){
             date = null;
         }

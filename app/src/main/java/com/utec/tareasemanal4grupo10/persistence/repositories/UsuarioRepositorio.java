@@ -37,11 +37,4 @@ public class UsuarioRepositorio {
         UsuarioRoomBD.databaseWriteExecutor.execute(() -> daou.deleteAll());
     }
 
-    public UauarioDAO obtenerUsuarioDAO(){
-        return daou;
-    }
-
-    public void defineUsuarioDAO(UauarioDAO daou){
-        this.daou = daou;
-    }
 }

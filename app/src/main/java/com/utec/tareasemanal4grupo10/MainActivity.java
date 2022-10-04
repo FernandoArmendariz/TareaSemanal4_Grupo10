@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.utec.tareasemanal4grupo10.models.UsuarioViewModel;
 import com.utec.tareasemanal4grupo10.persistence.entities.Usuario;
@@ -55,12 +56,13 @@ public class MainActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(view -> {
             //generamos proximo mensaje
             insertarNuevoUsuario();
+
         });
 
         bntHistorico = findViewById(R.id.btnHistorico);
         bntHistorico.setOnClickListener(view -> {
             //Se llama a crear a UsuarioHistorico
-            Intent intent = new Intent(MainActivity.this, UsuarioHistorico.class);
+            Intent intent = new Intent(this, UsuarioHistorico.class);
             startActivity(intent);
         });
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         nombre.setText("");
         apellido.setText("");
         rol.setText("");
-
+        Toast.makeText(this,"Agregado correctamente!",Toast.LENGTH_SHORT).show();
     }
 
 }

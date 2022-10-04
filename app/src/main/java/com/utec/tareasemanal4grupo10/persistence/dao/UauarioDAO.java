@@ -1,7 +1,5 @@
 package com.utec.tareasemanal4grupo10.persistence.dao;
 
-import android.database.sqlite.SQLiteConstraintException;
-
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -17,7 +15,7 @@ public interface UauarioDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     //@Query(value = "INSERT INTO usuarios (first_name,last_name,role) VALUES (:nombre, :apellido, :rol)")
-    void insert(Usuario usuario);
+    long insert(Usuario usuario);
 
     @Query("DELETE FROM usuarios")
     void deleteAll();
