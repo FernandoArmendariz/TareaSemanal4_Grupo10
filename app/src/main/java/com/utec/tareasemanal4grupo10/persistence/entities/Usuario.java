@@ -6,7 +6,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
-import com.utec.tareasemanal4grupo10.models.ConvertirFechaString;
+import com.utec.tareasemanal4grupo10.models.ConvertirFechaTexto;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -33,7 +33,7 @@ public class Usuario implements Serializable {
 
         @NotNull
         @ColumnInfo(name = "created_at", defaultValue = "CURRENT_TIMESTAMP")
-        @TypeConverters(ConvertirFechaString.class) //cambia de date a string
+        @TypeConverters(ConvertirFechaTexto.class) //cambia de date a string
         private Date fecha;
 
         public Usuario(@NotNull String nombre, @NotNull String apellido, @NotNull String rol) {
